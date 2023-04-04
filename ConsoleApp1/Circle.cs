@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public class Circle : Figure
+    public class Circle : Figure, ISquareable
     {
         public double CenterX { get; set; }
         public double CenterY { get; set; }
+
+        public double Radius { get; set; }
+
+        public double Square => Math.PI*Radius*Radius;
 
         protected override void Draw(Canvas canvas)
         {

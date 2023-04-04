@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    public class FilledCircle : Circle
+    public class FilledCircle : Circle, ISquareable, IPaintable
     {
         public Color BackGroundColor { get; set; }
 
@@ -14,6 +14,11 @@ namespace ConsoleApp1
         {
         }
 
+        public new void Paint(Canvas canvas)
+        {
+            base.Draw(canvas);
+            Console.WriteLine("Fill Circle");
+        }
 
         protected override void Draw(Canvas canvas)
         {

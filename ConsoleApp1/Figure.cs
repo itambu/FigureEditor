@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    public abstract class Figure
+    public abstract class Figure : IFigure
     {
         public int Id { get; init; }
         protected abstract void Draw(Canvas canvas);

@@ -5,13 +5,15 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    public class Ellipse : Figure
+    public class Ellipse : Figure, ISquareable
     {
         public double CenterX { get; set; }
         public double CenterY { get; set; }
 
         public double Width { get; set; }
         public double Height { get; set; }
+
+        public double Square => Math.PI * Width * Height / 4;
 
         public Ellipse(int id, double centerX, double centerY) : base(id)
         {

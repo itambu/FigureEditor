@@ -7,11 +7,11 @@ namespace ConsoleApp1
 {
     public class FigureEditor
     {
-        public List<Figure> Figures { get; private set; }
+        public List<IFigure> Figures { get; private set; }
 
         public Canvas? Canvas { get; private set; }
 
-        public FigureEditor(Canvas canvas, List<Figure>? figures)
+        public FigureEditor(Canvas canvas, List<IFigure>? figures)
         {
             Canvas = canvas;
             Figures = figures!;
@@ -32,6 +32,21 @@ namespace ConsoleApp1
             {
                 f.Paint(Canvas);
             }
+        }
+
+        public double TotalSquare()
+        {
+            double temp = 0;
+            foreach (var f in Figures) 
+            {
+                ISquareable? item = f as ISquareable;
+                if (item!= null)
+                {
+                    temp += item.Square;
+                }
+            }
+
+            return temp;
         }
     }
 }
